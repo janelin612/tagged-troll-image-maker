@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>貼標籤圖片產生器</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+    <div id="app">
+        <canvas id="canvas" width="600" height="800"></canvas>
+        <div id="input-field">
+            <div>
+                <h3>1. 選擇圖片:</h3>
+                <input type="file" v-on:change="filesChange($event.target.files)" />
+            </div>
+            <div>
+                <h3>2. 輸入標題:</h3>
+                <input type="text" v-model="title">
+            </div>
+            <div>
+                <h3>3. 輸入項目</h3>
+                <ul>
+                    <li v-for="(item,index) in list"><input type="text" v-model="list[index]" @blur="onBlur(index)"></li>
+                    <li><input type="text" placeholder="輸入新項目" @blur="onNewItem()" @keyup.enter="onNewItem()" v-model="newListItem"></li>
+                </ul>
+
+                <h4>列表左方空間</h4>
+                <input type="number" v-model="paddLeftOfList">
+            </div>
+        </div>
+    </div>
+    <div id="copyright">Github:<a href="https://github.com/janelin612">janelin612</a></div>
+    <script src="script/main.js"></script>
+</body>
+</html>
