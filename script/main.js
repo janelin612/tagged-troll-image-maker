@@ -19,6 +19,10 @@ var app = new Vue({
             bak:{r:45,g:45,b:45},
             title:{r:220,g:220,b:220},
             list:{r:200,g:200,b:200}
+        },
+        size:{
+            title:48,
+            list:22
         }
     },
     updated: function () {
@@ -88,28 +92,29 @@ var app = new Vue({
             }
         },
         drawText: function (ctx) {
-            //Title
+            let padding=new Number(this.size.title)*0.8
             ctx.fillStyle = "rgb("+this.color.title.r+","+this.color.title.g+","+this.color.title.b+")";
-            ctx.font = '48px sans-serif';
+            ctx.font = ''+this.size.title+'px sans-serif';
             ctx.textAlign = 'center';
-            ctx.fillText(this.title, 300, nextY + 50);
-            nextY += 100;
+            ctx.fillText(this.title, 300, nextY + padding);
+            nextY += 2*padding;
             this.drawList(ctx);
         },
         drawList: function (ctx) {
+            let padding=new Number(this.size.list)*0.7
             ctx.fillStyle = "rgb("+this.color.list.r+","+this.color.list.g+","+this.color.list.b+")";
-            ctx.font = '22px sans-serif';
+            ctx.font = ''+this.size.list+'px sans-serif';
             ctx.textAlign = 'left';
 
             for(i=0;i<this.list.length;i++){
                 var lines=this.list[i].split("\\n");
                 for(j=0;j<lines.length;j++){
                     if(j==0){
-                        ctx.fillText("● " + lines[j], this.paddLeftOfList , nextY + 16);
+                        ctx.fillText("● " + lines[j], this.paddLeftOfList , nextY + padding);
                     }else{
-                        ctx.fillText("   " + lines[j], this.paddLeftOfList , nextY + 16);
+                        ctx.fillText("   " + lines[j], this.paddLeftOfList , nextY + padding);
                     }
-                    nextY += 32;
+                    nextY += 2*padding;
                 }
             }
         }

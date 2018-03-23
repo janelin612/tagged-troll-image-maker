@@ -35,26 +35,36 @@
                 </div>
             </div>
             <div>
-                <h3>4. 調整顏色 <span class="description">(範圍0~255)</span></h3>
-                <div class="color-picker">
-                    <h5>背景</h5>
-                    <div class="sub">
-                        R: <input type="number" v-model="color.bak.r" min="0" max="255">
-                        G: <input type="number" v-model="color.bak.g" min="0" max="255">
-                        B: <input type="number" v-model="color.bak.b" min="0" max="255">
+                <h3>4. 調整細節</h3>
+                <div class="sub">
+                    <h4>顏色<span class="description">(範圍0~255)</span></h4>
+                    <div class="color-picker">
+                        <h5>背景</h5>
+                        <div class="sub">
+                            R: <input type="number" class="color-num" v-model="color.bak.r" min="0" max="255">
+                            G: <input type="number" class="color-num" v-model="color.bak.g" min="0" max="255">
+                            B: <input type="number" class="color-num" v-model="color.bak.b" min="0" max="255">
+                        </div>
+                        <h5>標題</h5>
+                        <div class="sub">
+                            R: <input type="number" class="color-num" v-model="color.title.r" min="0" max="255">
+                            G: <input type="number" class="color-num" v-model="color.title.g" min="0" max="255">
+                            B: <input type="number" class="color-num" v-model="color.title.b" min="0" max="255">
+                        </div>
+                        <h5>列表</h5>
+                        <div class="sub">
+                            R: <input type="number" class="color-num" v-model="color.list.r" min="0" max="255">
+                            G: <input type="number" class="color-num" v-model="color.list.g" min="0" max="255">
+                            B: <input type="number" class="color-num" v-model="color.list.b" min="0" max="255">
+                        </div>
                     </div>
-                    <h5>標題</h5>
-                    <div class="sub">
-                        R: <input type="number" v-model="color.title.r" min="0" max="255">
-                        G: <input type="number" v-model="color.title.g" min="0" max="255">
-                        B: <input type="number" v-model="color.title.b" min="0" max="255">
-                    </div>
-                    <h5>列表</h5>
-                    <div class="sub">
-                        R: <input type="number" v-model="color.list.r" min="0" max="255">
-                        G: <input type="number" v-model="color.list.g" min="0" max="255">
-                        B: <input type="number" v-model="color.list.b" min="0" max="255">
-                    </div>
+                </div>
+                <div class="sub">
+                    <h4>文字大小</h4>
+                    <span>標題</span>
+                    <input type="number" class="font-size" v-model="size.title" min="1">
+                    <span>列表</span>
+                    <input type="number" class="font-size" v-model="size.list" min="1">
                 </div>
             </div>
         </div>

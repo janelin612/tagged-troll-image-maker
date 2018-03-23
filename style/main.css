@@ -9,6 +9,11 @@ body{
     padding: 32px;
 }
 
+#canvas{
+    width: 600px;
+    height: 800px;
+}
+
 ul{
     list-style: none;
     margin-left: 32px;
@@ -36,6 +41,10 @@ h5{
    margin: 8px 0;
 }
 
-.color-picker input{
+input.color-num{
+    width: 64px;
+}
+
+input.font-size{
     width: 64px;
 }
