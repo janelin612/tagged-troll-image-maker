@@ -102,8 +102,15 @@ var app = new Vue({
             ctx.textAlign = 'left';
 
             for(i=0;i<this.list.length;i++){
-                ctx.fillText("● " + this.list[i], this.paddLeftOfList , nextY + 16);
-                nextY += 32;
+                var lines=this.list[i].split("\\n");
+                for(j=0;j<lines.length;j++){
+                    if(j==0){
+                        ctx.fillText("● " + lines[j], this.paddLeftOfList , nextY + 16);
+                    }else{
+                        ctx.fillText("   " + lines[j], this.paddLeftOfList , nextY + 16);
+                    }
+                    nextY += 32;
+                }
             }
         }
     }

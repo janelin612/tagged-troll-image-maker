@@ -23,7 +23,7 @@
                 <input type="text" v-model="title">
             </div>
             <div>
-                <h3>3. 輸入項目</h3>
+                <h3>3. 輸入項目 <span class="description">(\n換行)</span> </h3>
                 <ul>
                     <li v-for="(item,index) in list"><input type="text" v-model="list[index]" @blur="onBlur(index)"></li>
                     <li><input type="text" placeholder="輸入新項目" @blur="onNewItem()" @keyup.enter="onNewItem()" v-model="newListItem"></li>
