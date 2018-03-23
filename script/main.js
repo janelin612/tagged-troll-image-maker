@@ -14,7 +14,12 @@ var app = new Vue({
             '項目2'
         ],
         newListItem:"",
-        paddLeftOfList:50
+        paddLeftOfList:50,
+        color:{
+            bak:{r:45,g:45,b:45},
+            title:{r:220,g:220,b:220},
+            list:{r:200,g:200,b:200}
+        }
     },
     updated: function () {
         this.draw();
@@ -48,7 +53,7 @@ var app = new Vue({
         draw: function () {
             var ctx=this.$el.querySelector("#canvas").getContext("2d");
             var self = this;
-            ctx.fillStyle = "rgb(45,45,45)";
+            ctx.fillStyle = "rgb("+this.color.bak.r+","+this.color.bak.g+","+this.color.bak.b+")";
             ctx.fillRect(0, 0, 600, 800);
 
             var img = new Image();
@@ -84,7 +89,7 @@ var app = new Vue({
         },
         drawText: function (ctx) {
             //Title
-            ctx.fillStyle = "rgb(220,220,220)";
+            ctx.fillStyle = "rgb("+this.color.title.r+","+this.color.title.g+","+this.color.title.b+")";
             ctx.font = '48px sans-serif';
             ctx.textAlign = 'center';
             ctx.fillText(this.title, 300, nextY + 50);
@@ -92,7 +97,7 @@ var app = new Vue({
             this.drawList(ctx);
         },
         drawList: function (ctx) {
-            ctx.fillStyle = "rgb(200,200,200)";
+            ctx.fillStyle = "rgb("+this.color.list.r+","+this.color.list.g+","+this.color.list.b+")";
             ctx.font = '22px sans-serif';
             ctx.textAlign = 'left';
 
