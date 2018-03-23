@@ -11,6 +11,8 @@ body{
 
 ul{
     list-style: none;
+    margin-left: 32px;
+    padding: 0;
 }
 li{
     padding: 5px 0;
@@ -20,4 +22,20 @@ li{
     position: fixed;
     bottom: 8px;
     right: 8px;
+}
+
+.sub{
+    margin-left: 32px;
+}
+
+.description{
+    font-size: 12px;
+}
+
+h5{
+   margin: 8px 0;
+}
+
+.color-picker input{
+    width: 64px;
 }
